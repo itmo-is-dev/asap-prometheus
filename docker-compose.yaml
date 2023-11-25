@@ -7,7 +7,7 @@ services:
     networks:
       - asap-network
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--config.file=/etc/prometheus/prometheus.yaml'
       - '--enable-feature=agent'
     restart: unless-stopped
     volumes:
