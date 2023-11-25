@@ -3,6 +3,17 @@ global:
   scrape_timeout: 10s
   evaluation_interval: 15s
 
+remote_write:
+  - url: 'YANDEX_PROMETHEUS_URL'
+    bearer_token_file: '/etc/prometheus/yc_token'
+    queue_config:
+        max_samples_per_send: 1000
+        min_backoff: 100ms
+        max_backoff: 15s
+        retry_on_http_429: true
+    metadata_config:
+        send: false
+
 scrape_configs:
 - job_name: asap-google
   honor_timestamps: true
