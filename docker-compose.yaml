@@ -9,6 +9,7 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yaml'
       - '--enable-feature=agent'
+      - '--web.external-url=/prometheus/'
     restart: unless-stopped
     volumes:
       - ./prometheus:/etc/prometheus
